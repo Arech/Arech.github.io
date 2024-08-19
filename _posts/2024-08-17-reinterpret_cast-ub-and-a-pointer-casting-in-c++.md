@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Reinterpet_cast, UB and a Pointer Type Casting in C++"
+title:  "Reinterpet_cast, UB and a Pointer Type Casting in C++17"
 date:   2024-08-17 14:02:08 +0300
 categories: c++
 tags: c++17 reinterpet_cast std::launder ub ubsan
@@ -71,7 +71,7 @@ There is a common argument that I hear: "Yeah, yeah, I get it, but `reinterpet_c
 
 For me this example is a sufficient proof by converse, that one shall not rely on UB in their code. Even when that UB has worked consistently for a decade. This is especially true, when you can eliminate the issue entirely simply by doing things in a right and safe way.
 
-## Pointer Type Casting in C++
+## Pointer Type Casting in C++17
 
 Ok, then when your code just takes some byte representation as `unsigned char* data` pointer to an object (or an array of such objects), what would be a safe and proper way to deal with it? How to "cast it back" to the original object type?
 
