@@ -1,0 +1,44 @@
+# Run
+
+on WSL as $ `bundle exec jekyll serve --force_polling --drafts`
+
+# Themes
+
+Supported themes https://pages.github.com/themes/
+
+https://github.com/jekyll/minima - default, ok, but needs to change a code bg color
+Current v docs are at https://github.com/jekyll/minima/tree/v2.5.1
+
+https://pages-themes.github.io/midnight/ - nice, needs linenumbers for the code
+Also as all other themes, need some layout fixes, such as https://github.com/studio84pottery/studio84pottery.github.io
+In the essence, one should port all themes but the minima to the minima features and conventions
+
+https://pages-themes.github.io/slate/ 
+https://pages-themes.github.io/tactile/
+https://pages-themes.github.io/hacker/
+not bad, but all needs some fixing
+
+## Seo details
+
+https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
+https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/advanced-usage.md
+
+# Plugins
+
+Supported are in https://pages.github.com/versions/
+
+https://github.com/jekyll/jekyll-redirect-from - to arrange a list of URL that redirect to the current page
+
+https://github.com/benbalter/jekyll-relative-links - default enabled, properly link other local .md files
+
+https://github.com/jekyll/jekyll-sitemap - makes a sitemap
+
+https://github.com/jekyll/jemoji - GH flavoured emojis
+
+# Tips
+
+To strip all non utf-8 chars from a file use
+
+iconv -c -t utf-8 ./myfile.md > fixed.md
+
+
