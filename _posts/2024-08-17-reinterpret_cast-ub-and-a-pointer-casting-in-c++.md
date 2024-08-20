@@ -53,8 +53,8 @@ Funnily enough, when I pointed that out, they responded with a link to a godbolt
 ## Basic Principles of C++ Needed to Untangle reinterpet_cast Misuse
 
 To understand the problem better, let's recall a few basic principles of C++ that are basically the same in all versions of the Standard:
-- **everything**, [except](https://timsong-cpp.github.io/cppwp/n4659/basic.types#8) for functions and references, in C++ **are [objects](https://timsong-cpp.github.io/cppwp/n4659/intro.object)** (even an `int`, a `float`, any pointer, even the simplest `char` are such objects).
-- **each object has a lifetime**, and the object is what it is [only during that time period](https://timsong-cpp.github.io/cppwp/n4659/basic.life#4). Outside of an object's lifetime, basically only memory inspection operations (accesses through `char`, `unsigned char` or `std::byte`) are well-defined and it is so [only when they are done right](https://timsong-cpp.github.io/cppwp/n4659/basic.life#6).
+- C++ manipulates with **[objects](https://timsong-cpp.github.io/cppwp/n4659/intro.object#1)** (even an instance of `int`, a `float`, any pointer, even the simplest `char` are such objects).
+- **every object has a lifetime**, and the object is what it is [only during that time period](https://timsong-cpp.github.io/cppwp/n4659/basic.life#4). Outside of an object's lifetime, basically only memory inspection operations (accesses through `char`, `unsigned char` or `std::byte`) are well-defined and it is so [only when they are done right](https://timsong-cpp.github.io/cppwp/n4659/basic.life#6).
 - there are **[strict rules][sa-rule]**, which govern **how an object could be accessed** (read/modified) within its lifetime. cppreference.com have a somewhat simpler, though less precise, [version of that](https://en.cppreference.com/w/cpp/language/reinterpret_cast#Type_accessibility)
 
 ### A Better Mind Model of reinterpret_cast
