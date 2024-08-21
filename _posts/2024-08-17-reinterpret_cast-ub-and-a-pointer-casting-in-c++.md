@@ -200,7 +200,7 @@ In addition to already mentioned Cpplang slack community member "**LegionMammal9
 
 ## Comments
 
-Please share you thought and feedback [in the comments to the post on LI](https://www.linkedin.com/posts/activity-7231920449390096384-q6yR?utm_source=share&utm_medium=member_desktop)
+Please share you thoughts and feedback on the article [in the comments to the post on LI](https://www.linkedin.com/posts/activity-7231920449390096384-q6yR?utm_source=share&utm_medium=member_desktop)
 
 [reint-page]: https://timsong-cpp.github.io/cppwp/n4659/expr.reinterpret.cast
 [sa-rule]: https://timsong-cpp.github.io/cppwp/n4659/basic.lval#8
