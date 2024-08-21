@@ -192,7 +192,12 @@ Now, one can obtain a usable pointer to `A` with just `makeSafePtr<A>(data)` cal
 
 See the demo here [https://godbolt.org/z/e8j4TcKP6](https://godbolt.org/z/e8j4TcKP6)
 
-Notice that each of 3 major compilers have generated a pretty efficient code and that clang and gcc are the ancient ones, available in old Ubuntu.focal out of the box. There are just no temporary buffers, `memcpy()` calls and whatnot in the assembly. Each compiler was able to infer that the only side effect of the function (not counting buffer size and pointer alignment checks) is a pointer cast from `unsigned char*` to a `A*` that points to an existing object of A within its lifetime.
+Notice that each of 3 major compilers have actually generated a pretty efficient code! Note that clang and gcc are the ancient ones, available in old Ubuntu.focal out of the box. There are just no temporary buffers, `memcpy()` calls and whatnot in the assembly. Each compiler was able to infer that the only side effect of the function (not counting buffer size and pointer alignment checks) is a pointer cast from `unsigned char*` to a `A*` that points to an existing object of A within its lifetime.
+
+The only edge case, where this might be not optimal, is a debug build. However, you aren't going to ship a debug binary, are you? This edge case is usually only relevant for a local development process, where you can kind of "guarantee" that the UB you consciously introduce behave strictly in a certain expected way and that way will not affect the outcome. So if that edge case really troubles you, - go ahead and make a preprocessor wrapper that will abuse `reinterpret_cast` instead of a proper conversion function if a special build flag is set for the debug build (but note that in general case you still **must** care about a buffer size and a pointer alignment)
+
+So, the main conclusion would be, as one of my great colleagues, **Dominik Samorek** have suggested, an emphasis: don't be afraid that the safe and proper solution would be less efficient than just blindly abusing `reinterpret_cast`. Compilers were smart enough to make it as efficient long-long ago. Instead, **strongly focus on writing correct Standard conforming code** - that's the actual real pain point of whole C++, where a compiler, unfortunately, couldn't help much despite best efforts.
+
 
 ## Acknowledgements
 
