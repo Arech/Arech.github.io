@@ -12,7 +12,7 @@ Let's have a closer look at `reinterpet_cast<>()` expression in C++ and find out
 
 For this article I got motivated by two things:
 
-First, someone who titled themselves as "C++ guru" and in the past had delivered at least one very good talk on C++, ~recently-ish made a video about `reinterpet_cast`, where they claimed two major things: `reinterpet_cast` is often misused which causes an UB in a program (I fully agree with that), and  they offered a "solution", which...contained the very same UB, they warned against. Worse than that, they used a UB sanitizer to prove their point.
+First, someone who in the past had delivered at least one very good talk on C++, ~recently-ish made a video about `reinterpet_cast`, where they claimed two major things: `reinterpet_cast` is often misused which causes an UB in a program (I fully agree with that), and  they offered a "solution", which...contained the very same UB, they warned against. Worse than that, they used a UB sanitizer to prove their point.
 
 Second, during code reviews I see that `reinterpet_cast` leads to an UB on basically every occasion.
 
