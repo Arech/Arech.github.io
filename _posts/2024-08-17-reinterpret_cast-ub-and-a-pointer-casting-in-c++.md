@@ -201,7 +201,7 @@ So, the main conclusion would be, as one of my great colleagues, **Dominik Samor
 
 ## Acknowledgements
 
-In addition to already mentioned Cpplang slack community member "**LegionMammal978**", discussion with whom was helpful for me, a huge personal thanks goes to **Richard Smith**, who posted this eye opening message with some valuable info on compiler's internals: [https://web.archive.org/web/20201128194944/http://www.open-std.org/pipermail/ub/2016-February/000565.html](https://web.archive.org/web/20201128194944/http://www.open-std.org/pipermail/ub/2016-February/000565.html) and to a kind and careful soul, who shared that link on [reinterpret_cast page](https://en.cppreference.com/w/cpp/language/reinterpret_cast) of cppreference.com. 
+In addition to already mentioned Cpplang slack community member "**LegionMammal978**", discussion with whom was helpful for me, a huge personal thanks goes to **Richard Smith**, who posted this excellent message with some valuable info on compiler's internals: [https://web.archive.org/web/20201128194944/http://www.open-std.org/pipermail/ub/2016-February/000565.html](https://web.archive.org/web/20201128194944/http://www.open-std.org/pipermail/ub/2016-February/000565.html) and to a kind and careful soul, who shared that link on [reinterpret_cast page](https://en.cppreference.com/w/cpp/language/reinterpret_cast) of cppreference.com. 
 
 ## Comments
 
