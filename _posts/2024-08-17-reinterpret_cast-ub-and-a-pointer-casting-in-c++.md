@@ -20,7 +20,7 @@ So, it turns out that many people, including quite skilled ones, are making mist
 
 ### Scope of the Article
 
-By default we'll talk about C\++17 here, so for reference I'll post links to [the latest publicly available C++17 Standard draft (n4659)](https://timsong-cpp.github.io/cppwp/n4659). Newer language versions have some additional useful tools, but that's a different story that will not be touched here. What's important is that a correct solution in C++17 stays correct everywhere else and that all considerations below are mostly (maybe even fully) applicable to other language versions too, unless otherwise is specifically mentioned.
+By default we'll talk about C\++17 here, so for reference I'll post links to [the latest publicly available C++17 Standard draft (n4659)](https://timsong-cpp.github.io/cppwp/n4659). Newer language versions have some additional useful tools, but that's a different story that will mostly not be touched here (there'll be some links at the end of the page though). What's important is that a correct solution in C++17 stays correct everywhere else and that all considerations below are mostly (maybe even fully) applicable to other language versions too, unless otherwise is specifically mentioned.
 
 Another thing to highlight: we're talking about passing objects of [trivially copyable types](https://timsong-cpp.github.io/cppwp/n4659/basic.types#9) here. In the simplest terms, these are scalar types and pure C-style structures composed of such types or other such structures. More complex types require more considerations that are way out of the scope of the article, but just note that probably the safest way to solve that is to pass around a serialized object representation, which is trivially copyable by definition.
 
@@ -197,6 +197,10 @@ Notice that each of 3 major compilers have actually generated a pretty efficient
 The only edge case I can imagine, where this might be not optimal, is a debug build. However, you aren't going to ship a debug binary, are you? This edge case is usually only relevant for a local development process, where you can kind of "guarantee" that the UB you consciously introduce behave strictly in a certain expected way and that way will not affect the outcome. So if that edge case really troubles you, - go ahead and make a preprocessor wrapper that will abuse `reinterpret_cast` instead of a proper conversion function if a special build flag is set for the debug build (but note that in general case you still **must** care about a buffer size and a pointer alignment). I would love to learn different use-cases, btw; please comment if you know them!
 
 So, the main conclusion would be, as one of my great colleagues, **Dominik Samorek** have suggested, an emphasis: don't be afraid that the safe and proper solution would be less efficient than just blindly abusing `reinterpret_cast`. Compilers were smart enough to make it as efficient long-long ago. Instead, **strongly focus on writing correct Standard conforming code** - that's the actual real pain point of whole C++, where a compiler, unfortunately, couldn't help much despite best efforts.
+
+## C++20 and beyond
+
+Each succeeding C++ standard version is usually a major improvement and bugfixing of the previous version. C\++20 and even more so C\++23 have new features that significantly improve QoL of a developer (even though the basic principles remains the same). Covering that is a bit out of scope, but for those interested, I highly recommend a recent talk Jonathan Müller gave on C++ Now 2024 conference, that touches precisely the topic: [A Deep Dive Into C++ Object Lifetimes](https://www.youtube.com/watch?v=oZyhq4D-QL4)
 
 
 ## Acknowledgements
