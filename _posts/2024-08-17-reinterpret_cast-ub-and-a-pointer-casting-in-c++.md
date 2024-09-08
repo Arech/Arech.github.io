@@ -200,7 +200,7 @@ So, the main conclusion would be, as one of my great colleagues, **Dominik Samor
 
 ## C++20 and beyond
 
-Each succeeding C++ standard version is usually a major improvement and bugfixing of the previous version. C\++20 and even more so C\++23 have new features that significantly improve QoL of a developer (even though the basic principles remains the same). Covering that is a bit out of scope, but for those interested, I highly recommend a recent talk Jonathan Muller gave on C++ Now 2024 conference, that touches precisely the topic: [A Deep Dive Into C++ Object Lifetimes](https://www.youtube.com/watch?v=oZyhq4D-QL4)
+Each succeeding C++ standard version is usually a major improvement and bugfixing of the previous version. C\++20 and even more so C\++23 have new features that significantly improve QoL of a developer (even though the basic principles remains the same). Covering that is a bit out of scope, but for those interested, I highly recommend a great talk **Jonathan Muller** gave on C++ Now 2024 conference, that touches precisely the topic: [**A Deep Dive Into C++ Object Lifetimes**](https://www.youtube.com/watch?v=oZyhq4D-QL4)
 
 
 ## Acknowledgements
